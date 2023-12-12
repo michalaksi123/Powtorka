@@ -19,6 +19,7 @@ public class Kid {
         candies.add(candy);
         candy.getKids().add(this);
     }
+
     public long numberOfCandyOfGivenType(String type){
         return Optional.ofNullable(candies)
                 .orElse(Collections.emptyList())
@@ -27,10 +28,6 @@ public class Kid {
                 .filter(candy -> candy.getType().equals(type))
                 .count();
     }
-
-
-
-
 
     public String getName() {
         return name;

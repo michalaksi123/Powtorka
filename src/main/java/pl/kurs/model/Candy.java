@@ -2,6 +2,7 @@ package pl.kurs.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Candy {
 
@@ -9,13 +10,18 @@ public class Candy {
     private String type;
     private List<Kid> kids;
 
-    public Candy(String name, String type, List<Kid> kids) {
+    public Candy(String name, String type) {
         this.name = name;
         this.type = type;
         this.kids = new ArrayList<>();
     }
 
-
+    public List<Candy> getAllPurchasedCandies() {
+        return kids.stream()
+                .flatMap(kid -> kid.getCandies().stream())
+                .distinct()
+                .collect(Collectors.toList());
+    }
 
     public String getName() {
         return name;

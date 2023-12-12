@@ -4,6 +4,7 @@ import pl.kurs.model.Candy;
 import pl.kurs.model.Kid;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class CandyService {
@@ -27,7 +28,13 @@ public class CandyService {
                 .toList();
     }
 
-
-
+    public String namesCandyAsString(List<Candy> list) {
+        return  Optional.ofNullable(list)
+                .orElse(Collections.emptyList())
+                .stream()
+                .map(candy -> candy.getName().toLowerCase())
+                .distinct()
+                .collect(Collectors.joining(", "));
+    }
 
 }

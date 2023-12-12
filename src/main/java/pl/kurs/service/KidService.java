@@ -1,6 +1,7 @@
 package pl.kurs.service;
 
 import pl.kurs.exception.KidNotFoundException;
+import pl.kurs.model.Candy;
 import pl.kurs.model.Kid;
 
 import java.util.*;
@@ -25,5 +26,21 @@ public class KidService {
                 .filter(kid -> kid.numberOfCandyOfGivenType(type) > 0)
                 .max(Comparator.comparing(kid -> kid.numberOfCandyOfGivenType(type)))
                 .orElseThrow(KidNotFoundException::new);
+    }
+
+    public long howManySweetsOfAGivenTypeWereBoughtByChildren(String type, List<Candy> list) {
+        return Optional.ofNullable(list)
+                .orElse(Collections.emptyList())
+                .stream()
+                .filter(candy -> candy.getType().equals(type))
+                .count();
+    }
+
+    public boolean kidWithGum(List<Candy> list) {
+        return Optional.ofNullable(list)
+                .orElse(Collections.emptyList())
+                .stream()
+                .anyMatch(candy -> candy.getType().equalsIgnoreCase("guma"));
+
     }
 }
