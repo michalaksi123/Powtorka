@@ -42,5 +42,4 @@ public class KidService {
                 .stream()
                 .anyMatch(candy -> candy.getType().equalsIgnoreCase("Gum"));
     }
-
 }

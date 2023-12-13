@@ -45,7 +45,6 @@ public class Candy {
         return "Candy{" +
                 "name='" + name + '\'' +
                 ", type='" + type + '\'' +
-                ", kids=" + kids +
                 '}';
     }
 }

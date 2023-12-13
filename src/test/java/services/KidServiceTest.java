@@ -2,7 +2,6 @@ package services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
 import pl.kurs.exception.KidNotFoundException;
 import pl.kurs.model.Candy;
 import pl.kurs.model.Kid;
@@ -12,10 +11,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.*;
 
 public class KidServiceTest {
 
-    @Mock
     private Candy candy1;
     private Candy candy2;
     private Kid kid1;
@@ -62,7 +61,7 @@ public class KidServiceTest {
     @Test
     public void testKidWithGum() {
         boolean result = kidService.kidWithGum(candies);
-        assertThat(result).isTrue();
+        assertTrue(result);
     }
 
     @Test(expected = KidNotFoundException.class)

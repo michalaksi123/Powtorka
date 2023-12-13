@@ -58,7 +58,6 @@ public class Kid {
         return "Kid{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
-                ", candies=" + candies +
                 '}';
     }
 }

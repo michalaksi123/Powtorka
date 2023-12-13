@@ -19,6 +19,8 @@ public class CandyService {
                 .toList();
     }
 
+
+
     public List<Candy> allUniqeCandyThatKidsBought(List<Kid> list){
         return Optional.ofNullable(list)
                 .orElse(Collections.emptyList())
