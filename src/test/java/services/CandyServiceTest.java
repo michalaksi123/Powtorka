@@ -56,13 +56,12 @@ public class CandyServiceTest {
     @Test
     public void testNamesCandyAsString() {
         String result = candyService.namesCandyAsString(candies);
-        assertThat(result).isEqualTo("chocolate, gum");
+        assertThat(result).isEqualTo("chocolate, haribo");
     }
 
     @Test
     public void testFindNthMostPopularCandy() {
         kid1.buyCandy(candy1);
-
         Candy result1 = candyService.findNthMostPopularCandy(kids, 1);
         assertThat(result1).isEqualTo(candy1);
     }

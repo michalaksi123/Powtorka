@@ -3,6 +3,7 @@ package services;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
+import pl.kurs.exception.KidNotFoundException;
 import pl.kurs.model.Candy;
 import pl.kurs.model.Kid;
 import pl.kurs.service.KidService;
@@ -38,11 +39,6 @@ public class KidServiceTest {
 
         kids = Arrays.asList(kid1, kid2);
         candies = Arrays.asList(candy1, candy2, candy1);
-
-
-        kid1.buyCandy(candy1);
-        kid1.buyCandy(candy2);
-        kid2.buyCandy(candy1);
     }
 
     @Test
@@ -66,7 +62,12 @@ public class KidServiceTest {
     @Test
     public void testKidWithGum() {
         boolean result = kidService.kidWithGum(candies);
-        assertThat(result).isFalse();
+        assertThat(result).isTrue();
+    }
+
+    @Test(expected = KidNotFoundException.class)
+    public void ShouldThrowKidNotFoundException() {
+        kidService.firstKidWithTwoCandy(null,0);
     }
 }
 

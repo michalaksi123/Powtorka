@@ -16,13 +16,6 @@ public class Candy {
         this.kids = new ArrayList<>();
     }
 
-    public List<Candy> getAllPurchasedCandies() {
-        return kids.stream()
-                .flatMap(kid -> kid.getCandies().stream())
-                .distinct()
-                .collect(Collectors.toList());
-    }
-
     public String getName() {
         return name;
     }

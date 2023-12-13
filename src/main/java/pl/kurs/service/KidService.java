@@ -40,7 +40,7 @@ public class KidService {
         return Optional.ofNullable(list)
                 .orElse(Collections.emptyList())
                 .stream()
-                .anyMatch(candy -> candy.getType().equalsIgnoreCase("gum"));
-
+                .anyMatch(candy -> candy.getType().equalsIgnoreCase("Gum"));
     }
+
 }
