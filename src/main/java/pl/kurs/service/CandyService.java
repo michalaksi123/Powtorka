@@ -1,5 +1,6 @@
 package pl.kurs.service;
 
+import pl.kurs.exception.CandyNotFoundException;
 import pl.kurs.model.Candy;
 import pl.kurs.model.Kid;
 
@@ -35,6 +36,20 @@ public class CandyService {
                 .map(candy -> candy.getName().toLowerCase())
                 .distinct()
                 .collect(Collectors.joining(", "));
+    }
+
+    public Candy findNthMostPopularCandy(List<Kid> list, int n) {
+        return Optional.ofNullable(list)
+                .orElse(Collections.emptyList())
+                .stream()
+                .flatMap(kid -> kid.getCandies().stream())
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream()
+                .sorted(Map.Entry.<Candy, Long>comparingByValue().reversed())
+                .map(Map.Entry::getKey)
+                .skip(n - 1)
+                .findFirst()
+                .orElseThrow(CandyNotFoundException::new);
     }
 
 }

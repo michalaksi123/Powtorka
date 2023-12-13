@@ -41,22 +41,30 @@ public class CandyServiceTest {
 
     }
 
-        @Test
-        public void testAllCandyThatKidsBought () {
-            List<Candy> result = candyService.allCandyThatKidsBought(kids);
-            assertThat(result).containsExactlyInAnyOrder(candy1, candy2);
-        }
-
-        @Test
-        public void testAllUniqueCandyThatKidsBought () {
-            List<Candy> result = candyService.allUniqeCandyThatKidsBought(kids);
-            assertThat(result).containsExactlyInAnyOrder(candy1, candy2);
-        }
-
-        @Test
-        public void testNamesCandyAsString () {
-            String result = candyService.namesCandyAsString(candies);
-            assertThat(result).isEqualTo("chocolate, gum");
-        }
+    @Test
+    public void testAllCandyThatKidsBought() {
+        List<Candy> result = candyService.allCandyThatKidsBought(kids);
+        assertThat(result).containsExactlyInAnyOrder(candy1, candy2);
     }
+
+    @Test
+    public void testAllUniqueCandyThatKidsBought() {
+        List<Candy> result = candyService.allUniqeCandyThatKidsBought(kids);
+        assertThat(result).containsExactlyInAnyOrder(candy1, candy2);
+    }
+
+    @Test
+    public void testNamesCandyAsString() {
+        String result = candyService.namesCandyAsString(candies);
+        assertThat(result).isEqualTo("chocolate, gum");
+    }
+
+    @Test
+    public void testFindNthMostPopularCandy() {
+        kid1.buyCandy(candy1);
+
+        Candy result1 = candyService.findNthMostPopularCandy(kids, 1);
+        assertThat(result1).isEqualTo(candy1);
+    }
+}
 
