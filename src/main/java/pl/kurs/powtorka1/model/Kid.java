@@ -1,4 +1,4 @@
-package pl.kurs.model;
+package pl.kurs.powtorka1.model;
 
 import java.util.*;
 

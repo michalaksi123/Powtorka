@@ -1,8 +1,8 @@
-package pl.kurs.service;
+package pl.kurs.powtorka1.service;
 
-import pl.kurs.exception.KidNotFoundException;
-import pl.kurs.model.Candy;
-import pl.kurs.model.Kid;
+import pl.kurs.powtorka1.exception.KidNotFoundException;
+import pl.kurs.powtorka1.model.Candy;
+import pl.kurs.powtorka1.model.Kid;
 
 import java.util.*;
 

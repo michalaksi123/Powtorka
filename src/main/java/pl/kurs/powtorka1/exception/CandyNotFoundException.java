@@ -1,4 +1,4 @@
-package pl.kurs.exception;
+package pl.kurs.powtorka1.exception;
 
 public class CandyNotFoundException extends RuntimeException {
 

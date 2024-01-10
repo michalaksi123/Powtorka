@@ -2,10 +2,10 @@ package services;
 
 import org.junit.Before;
 import org.junit.Test;
-import pl.kurs.exception.KidNotFoundException;
-import pl.kurs.model.Candy;
-import pl.kurs.model.Kid;
-import pl.kurs.service.KidService;
+import pl.kurs.powtorka1.exception.KidNotFoundException;
+import pl.kurs.powtorka1.model.Candy;
+import pl.kurs.powtorka1.model.Kid;
+import pl.kurs.powtorka1.service.KidService;
 
 import java.util.Arrays;
 import java.util.List;

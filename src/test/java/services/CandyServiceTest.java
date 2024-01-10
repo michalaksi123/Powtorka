@@ -1,12 +1,10 @@
 package services;
 
-import org.assertj.core.api.Assertions;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import pl.kurs.model.Candy;
-import pl.kurs.model.Kid;
-import pl.kurs.service.CandyService;
+import pl.kurs.powtorka1.model.Candy;
+import pl.kurs.powtorka1.model.Kid;
+import pl.kurs.powtorka1.service.CandyService;
 
 import java.util.ArrayList;
 import java.util.Arrays;

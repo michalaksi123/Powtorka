@@ -1,4 +1,4 @@
-package pl.kurs.todo;
+package pl.kurs.powtorka1.todo;
 
 public class Main {
     public static void main(String[] args) {
