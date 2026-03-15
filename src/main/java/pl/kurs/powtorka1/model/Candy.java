@@ -1,6 +1,6 @@
 package pl.kurs.powtorka1.model;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class Candy {
